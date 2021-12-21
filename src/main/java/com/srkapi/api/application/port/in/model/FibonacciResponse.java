@@ -1,4 +1,4 @@
-package com.srkapi.fibonacci.test.application.port.in.model;
+package com.srkapi.api.application.port.in.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,10 +9,10 @@ import lombok.Setter;
 import java.io.Serializable;
 
 @Getter
-@Setter
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-public class FibonacciResponse implements Serializable {
+public class FibonacciResponse {
     private Integer result;
+
+    public FibonacciResponse(int result) {
+        this.result=result;
+    }
 }

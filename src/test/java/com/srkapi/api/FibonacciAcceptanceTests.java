@@ -1,7 +1,7 @@
-package com.srkapi.fibonacci.test;
+package com.srkapi.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.srkapi.fibonacci.test.application.port.in.model.FibonacciRequestCommand;
+import com.srkapi.api.web.controller.request.CalculatorRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -15,7 +15,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class TestApplicationIntegrationTests {
+class FibonacciAcceptanceTests {
 
     @Autowired
     private MockMvc mockMvc;
@@ -25,9 +25,8 @@ class TestApplicationIntegrationTests {
 
         mockMvc.perform(MockMvcRequestBuilders
                 .post("/fibonacci")
-                .content(asJsonString(new FibonacciRequestCommand(6)))
-                .contentType(MediaType.APPLICATION_JSON)
-                .accept(MediaType.APPLICATION_JSON))
+                .content(asJsonString(new CalculatorRequest(6)))
+                .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.result").exists())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.result").value(8));
@@ -37,7 +36,7 @@ class TestApplicationIntegrationTests {
     public void shouldReturn412ErrorCodeWhenFibonacciIsNegative() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
                 .post("/fibonacci")
-                .content(asJsonString(new FibonacciRequestCommand(-6)))
+                .content(asJsonString(new CalculatorRequest(-6)))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().is4xxClientError());
