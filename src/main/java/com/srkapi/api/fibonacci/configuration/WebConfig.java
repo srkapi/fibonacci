@@ -1,7 +1,7 @@
-package com.srkapi.api.configuration;
+package com.srkapi.api.fibonacci.configuration;
 
-import com.srkapi.api.application.FibonacciCalculator;
-import com.srkapi.api.application.usecase.CalculateFibonacciUseCases;
+import com.srkapi.api.fibonacci.application.FibonacciCalculator;
+import com.srkapi.api.fibonacci.application.usecase.CalculateFibonacciUseCases;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

@@ -1,4 +1,4 @@
-package com.srkapi.api.configuration;
+package com.srkapi.api.fibonacci.configuration;
 
 
 import org.springframework.context.annotation.Bean;

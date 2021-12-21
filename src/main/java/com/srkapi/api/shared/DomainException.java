@@ -1,6 +1,5 @@
 package com.srkapi.api.shared;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import lombok.Getter;
 
 @Getter

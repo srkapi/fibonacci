@@ -22,7 +22,6 @@ class FibonacciAcceptanceTests {
 
     @Test
     void calculatorFibonacciWhenValueIsPositive() throws Exception {
-
         mockMvc.perform(MockMvcRequestBuilders
                 .post("/fibonacci")
                 .content(asJsonString(new CalculatorRequest(6)))

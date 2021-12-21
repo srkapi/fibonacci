@@ -1,19 +1,21 @@
 package com.srkapi.api.web.controller;
 
 
-import com.srkapi.api.application.port.in.model.FibonacciRequestCommand;
-import com.srkapi.api.application.port.in.model.FibonacciResponse;
-import com.srkapi.api.application.usecase.CalculateFibonacciUseCases;
+import com.srkapi.api.fibonacci.application.command.FibonacciCommand;
+import com.srkapi.api.fibonacci.application.command.FibonacciCommandResult;
+import com.srkapi.api.fibonacci.application.usecase.CalculateFibonacciUseCases;
 import com.srkapi.api.shared.ApplicationException;
 import com.srkapi.api.shared.DomainException;
 import com.srkapi.api.web.controller.request.CalculatorRequest;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
@@ -26,11 +28,11 @@ public class FibonacciControllerRest {
 
     private final CalculateFibonacciUseCases fibonacciUseCases;
 
-    @RequestMapping( method = RequestMethod.POST,consumes = { MediaType.APPLICATION_JSON_UTF8_VALUE })
+    @RequestMapping(method = RequestMethod.POST)
     @ApiOperation(value = "calculator fibonacci")
     public ResponseEntity calculateFibonacci(@RequestBody @Valid CalculatorRequest request) throws ApplicationException {
         try {
-            FibonacciResponse result = this.fibonacciUseCases.execute(new FibonacciRequestCommand(request.getNumber()));
+            FibonacciCommandResult result = this.fibonacciUseCases.execute(new FibonacciCommand(request.getNumber()));
             return ResponseEntity.ok().body(result);
         } catch (DomainException e) {
             throw new ApplicationException(e.getCode(), e.getDetail());
