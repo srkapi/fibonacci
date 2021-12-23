@@ -1,7 +1,7 @@
 package com.srkapi.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.srkapi.api.web.controller.request.CalculatorRequest;
+import com.srkapi.api.controller.request.CalculatorRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

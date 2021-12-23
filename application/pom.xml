@@ -15,5 +15,21 @@
     <artifactId>application</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
+    <dependencies>
+
+        <dependency>
+            <groupId>com.srkapi.fibonacci</groupId>
+            <artifactId>shared</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.srkapi.base</groupId>
+            <artifactId>domain</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
     
 </project>
