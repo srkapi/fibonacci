@@ -1,12 +1,10 @@
-package com.srkapi.base.request;
+package com.srkapi.base.controller.request;
 
 import lombok.*;
 
 @Data
-@Setter
-@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CalculatorRequest  {
+public class CalculatorRequest {
     private Integer number;
 }
