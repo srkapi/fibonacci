@@ -11,17 +11,19 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.srkapi.base</groupId>
     <artifactId>domain</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
     <dependencies>
         <dependency>
-            <groupId>com.srkapi.fibonacci</groupId>
+            <groupId>com.srkapi.base</groupId>
             <artifactId>shared</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 
-    
+
 </project>
