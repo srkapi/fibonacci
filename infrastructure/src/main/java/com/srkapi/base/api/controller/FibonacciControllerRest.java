@@ -1,10 +1,10 @@
-package com.srkapi.base.controller;
+package com.srkapi.base.api.controller;
 
 
 import com.srkapi.base.application.fibonacci.command.FibonacciCommand;
 import com.srkapi.base.application.fibonacci.command.FibonacciCommandResult;
 import com.srkapi.base.application.fibonacci.usecase.CalculateFibonacciUseCases;
-import com.srkapi.base.controller.request.CalculatorRequest;
+import com.srkapi.base.api.controller.request.CalculatorRequest;
 import com.srkapi.base.shared.ApplicationException;
 import com.srkapi.base.shared.DomainException;
 import io.swagger.annotations.Api;

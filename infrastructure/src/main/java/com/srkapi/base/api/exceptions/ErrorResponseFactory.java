@@ -1,4 +1,4 @@
-package com.srkapi.base.exceptions;
+package com.srkapi.base.api.exceptions;
 
 
 import com.srkapi.base.shared.ApplicationException;

@@ -13,7 +13,6 @@
         <module>infrastructure</module>
         <module>domain</module>
         <module>application</module>
-        <module>web</module>
         <module>shared</module>
     </modules>
 

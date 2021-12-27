@@ -1,4 +1,4 @@
-package com.srkapi.base.controller.request;
+package com.srkapi.base.api.controller.request;
 
 import lombok.*;
 
