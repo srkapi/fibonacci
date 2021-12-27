@@ -10,7 +10,6 @@ public enum Errors {
     CONFLICT("domain conflict"),
     INTERNAL_ERROR("internal server error");
 
-
     private String detail;
 
     Errors(String value) {
