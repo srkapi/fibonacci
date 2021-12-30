@@ -1,8 +1,8 @@
 package com.srkapi.base.api.controller;
 
 
-import com.srkapi.base.application.fibonacci.command.FibonacciCommand;
-import com.srkapi.base.application.fibonacci.command.FibonacciCommandResult;
+import com.srkapi.base.application.fibonacci.values.FibonacciInput;
+import com.srkapi.base.application.fibonacci.values.FibonacciOutput;
 import com.srkapi.base.application.fibonacci.usecase.CalculateFibonacciUseCases;
 import com.srkapi.base.api.controller.request.CalculatorRequest;
 import com.srkapi.base.shared.ApplicationException;
@@ -32,7 +32,7 @@ public class FibonacciControllerRest {
     @ApiOperation(value = "calculator fibonacci")
     public ResponseEntity calculateFibonacci(@RequestBody @Valid CalculatorRequest request) throws ApplicationException {
         try {
-            FibonacciCommandResult result = this.fibonacciUseCases.execute(new FibonacciCommand(request.getNumber()));
+            FibonacciOutput result = this.fibonacciUseCases.execute(new FibonacciInput(request.getNumber()));
             return ResponseEntity.ok().body(result);
         } catch (DomainException e) {
             throw new ApplicationException(e.getCode(), e.getDetail());
