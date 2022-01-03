@@ -20,11 +20,11 @@ public final class RabbitMqPublisher {
         String serializedDomainEvent = DomainEventJsonSerializer.serialize(domainEvent);
 
         Message message = new Message(
-            serializedDomainEvent.getBytes(),
-            MessagePropertiesBuilder.newInstance()
-                                    .setContentEncoding("utf-8")
-                                    .setContentType("application/json")
-                                    .build()
+                serializedDomainEvent.getBytes(),
+                MessagePropertiesBuilder.newInstance()
+                        .setContentEncoding("utf-8")
+                        .setContentType("application/json")
+                        .build()
         );
 
         rabbitTemplate.send(exchangeName, domainEvent.eventName(), message);

@@ -28,11 +28,11 @@ public class RabbitMqEventBusConfiguration {
     public RabbitMqEventBusConfiguration(
             DomainEventSubscribersInformation domainEventSubscribersInformation,
             DomainEventsInformation domainEventsInformation,
-            @Value("${rabbit.exchange}") String exchange,
-            @Value("${rabbit.host}") String host,
-            @Value("${rabbit.port}") Integer port,
-            @Value("${rabbit.login}") String login,
-            @Value("${rabbit.password}") String password) {
+            @Value("${rabbitmq.exchange}") String exchange,
+            @Value("${rabbitmq.host}") String host,
+            @Value("${rabbitmq.port}") Integer port,
+            @Value("${rabbitmq.login}") String login,
+            @Value("${rabbitmq.password}") String password) {
         this.domainEventSubscribersInformation = domainEventSubscribersInformation;
         this.domainEventsInformation = domainEventsInformation;
         this.exchangeName = exchange;
