@@ -19,7 +19,7 @@ public final class DefaultQueryBus implements QueryBus {
     }
 
     @Override
-    public <R> R dispatch(Query<R> query) throws Exception {
+    public <R> R ask(Query<R> query) throws Exception {
         return defaultMessageBus.dispatch(query);
     }
 

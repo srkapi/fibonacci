@@ -1,7 +1,6 @@
 package com.srkapi.base;
 
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.srkapi.base.api.controller.request.CalculatorRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +24,9 @@ public class FibonacciControllerRestTest {
     @Test
     void calculatorFibonacciWhenValueIsPositive() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
-                .post("/fibonacci")
-                .content(asJsonString(new CalculatorRequest(6)))
-                .contentType(MediaType.APPLICATION_JSON))
+                        .post("/fibonacci")
+                        .content(JsonUtils.asJsonString(new CalculatorRequest(6)))
+                        .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.result").exists())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.result").value(8));
@@ -36,21 +35,14 @@ public class FibonacciControllerRestTest {
     @Test
     public void shouldReturn412ErrorCodeWhenFibonacciIsNegative() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
-                .post("/fibonacci")
-                .content(asJsonString(new CalculatorRequest(-6)))
-                .contentType(MediaType.APPLICATION_JSON)
-                .accept(MediaType.APPLICATION_JSON))
+                        .post("/fibonacci")
+                        .content(JsonUtils.asJsonString(new CalculatorRequest(-6)))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().is4xxClientError());
 
     }
 
-    public static String asJsonString(final Object obj) {
-        try {
-            return new ObjectMapper().writeValueAsString(obj);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
 
 }
 

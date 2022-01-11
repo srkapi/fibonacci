@@ -1,6 +1,7 @@
 package com.srkapi.base.shared.message;
 
 
+import com.srkapi.base.shared.DomainException;
 import com.srkapi.base.shared.exceptions.NoHandlerFoundException;
 import com.srkapi.base.shared.middleware.Middleware;
 import com.srkapi.base.shared.middleware.NextMiddlewareFunction;

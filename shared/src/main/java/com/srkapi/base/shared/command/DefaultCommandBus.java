@@ -2,6 +2,7 @@ package com.srkapi.base.shared.command;
 
 
 
+import com.srkapi.base.shared.DomainException;
 import com.srkapi.base.shared.exceptions.NoHandlerFoundException;
 import com.srkapi.base.shared.message.*;
 import com.srkapi.base.shared.middleware.Middleware;
@@ -19,7 +20,7 @@ public final class DefaultCommandBus implements CommandBus {
   }
 
   @Override
-  public <R> R dispatch(Command<R> command) throws Exception {
+  public <R> R dispatch(Command<R> command) throws DomainException,Exception {
     return defaultMessageBus.dispatch(command);
   }
 

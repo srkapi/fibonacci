@@ -1,14 +1,12 @@
 package com.srkapi.base.api.controller;
 
 
+import com.srkapi.base.api.controller.request.CalculatorRequest;
+import com.srkapi.base.application.fibonacci.usecase.CalculateFibonacciUseCases;
 import com.srkapi.base.application.fibonacci.values.FibonacciInput;
 import com.srkapi.base.application.fibonacci.values.FibonacciOutput;
-import com.srkapi.base.application.fibonacci.usecase.CalculateFibonacciUseCases;
-import com.srkapi.base.api.controller.request.CalculatorRequest;
 import com.srkapi.base.shared.ApplicationException;
 import com.srkapi.base.shared.DomainException;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -22,14 +20,12 @@ import javax.validation.Valid;
 @RestController
 @RequiredArgsConstructor
 @Validated
-@Api(value = "fibonacci rest controller")
 @RequestMapping("/fibonacci")
 public class FibonacciControllerRest {
 
     private final CalculateFibonacciUseCases fibonacciUseCases;
 
     @RequestMapping(method = RequestMethod.POST)
-    @ApiOperation(value = "calculator fibonacci")
     public ResponseEntity calculateFibonacci(@RequestBody @Valid CalculatorRequest request) throws ApplicationException {
         try {
             FibonacciOutput result = this.fibonacciUseCases.execute(new FibonacciInput(request.getNumber()));
