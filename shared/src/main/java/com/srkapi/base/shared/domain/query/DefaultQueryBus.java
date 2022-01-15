@@ -1,10 +1,9 @@
 package com.srkapi.base.shared.domain.query;
 
 
+import com.srkapi.base.shared.domain.command.middleware.Middleware;
 import com.srkapi.base.shared.domain.exceptions.NoHandlerFoundException;
 import com.srkapi.base.shared.domain.message.*;
-import com.srkapi.base.shared.message.*;
-import com.srkapi.base.shared.domain.command.middleware.Middleware;
 
 import java.util.List;
 

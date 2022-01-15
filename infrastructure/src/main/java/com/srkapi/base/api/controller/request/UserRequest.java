@@ -1,14 +1,16 @@
 package com.srkapi.base.api.controller.request;
 
-import lombok.AllArgsConstructor;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class UserRequest {
+    @Schema(required = true)
     private String name;
+    @Schema(required = true)
     private String password;
+    @Schema(required = true)
     private String email;
 }
