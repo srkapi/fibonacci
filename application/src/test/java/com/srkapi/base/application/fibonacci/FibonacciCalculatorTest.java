@@ -3,7 +3,7 @@ package com.srkapi.base.application.fibonacci;
 
 import com.srkapi.base.application.fibonacci.values.FibonacciInput;
 import com.srkapi.base.application.fibonacci.values.FibonacciOutput;
-import com.srkapi.base.shared.DomainException;
+import com.srkapi.base.shared.domain.DomainException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

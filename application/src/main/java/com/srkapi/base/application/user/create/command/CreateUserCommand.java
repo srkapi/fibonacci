@@ -1,6 +1,6 @@
 package com.srkapi.base.application.user.create.command;
 
-import com.srkapi.base.shared.command.Command;
+import com.srkapi.base.shared.domain.command.Command;
 import lombok.Getter;
 
 @Getter

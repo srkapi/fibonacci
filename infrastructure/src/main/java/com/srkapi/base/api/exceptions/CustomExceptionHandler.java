@@ -1,6 +1,6 @@
 package com.srkapi.base.api.exceptions;
 
-import com.srkapi.base.shared.ApplicationException;
+import com.srkapi.base.shared.domain.ApplicationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

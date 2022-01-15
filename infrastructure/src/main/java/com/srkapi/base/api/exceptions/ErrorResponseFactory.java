@@ -1,8 +1,8 @@
 package com.srkapi.base.api.exceptions;
 
 
-import com.srkapi.base.shared.ApplicationException;
-import com.srkapi.base.shared.Errors;
+import com.srkapi.base.shared.domain.ApplicationException;
+import com.srkapi.base.shared.domain.Errors;
 import lombok.experimental.UtilityClass;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

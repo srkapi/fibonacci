@@ -2,9 +2,9 @@ package com.srkapi.base.application.user.create;
 
 import com.srkapi.base.application.user.create.command.CreateUserCommand;
 import com.srkapi.base.application.user.create.command.CreateUserCommandResult;
-import com.srkapi.base.shared.autoscan.CommandMapping;
-import com.srkapi.base.shared.command.CommandHandler;
-import com.srkapi.base.shared.event.EventBus;
+import com.srkapi.base.shared.domain.autoscan.CommandMapping;
+import com.srkapi.base.shared.domain.command.CommandHandler;
+import com.srkapi.base.shared.domain.event.EventBus;
 
 @CommandMapping(value = CreateUserCommand.class)
 public class CreateUserCommandHandler implements CommandHandler<CreateUserCommand, CreateUserCommandResult> {
@@ -17,8 +17,6 @@ public class CreateUserCommandHandler implements CommandHandler<CreateUserComman
 
     @Override
     public CreateUserCommandResult handle(CreateUserCommand command) throws Exception {
-
-
         return null;
     }
 }

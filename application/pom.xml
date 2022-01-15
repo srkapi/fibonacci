@@ -23,7 +23,6 @@
             <groupId>com.srkapi.base</groupId>
             <artifactId>domain</artifactId>
         </dependency>
-
     </dependencies>
     <build>
         <plugins>

@@ -1,7 +1,7 @@
 package com.srkapi.base.domain.fibonacci.domain.exceptions;
 
-import com.srkapi.base.shared.DomainException;
-import com.srkapi.base.shared.Errors;
+import com.srkapi.base.shared.domain.DomainException;
+import com.srkapi.base.shared.domain.Errors;
 
 public class NumberErrorException extends DomainException {
 

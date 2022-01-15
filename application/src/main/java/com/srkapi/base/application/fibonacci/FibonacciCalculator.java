@@ -4,7 +4,7 @@ import com.srkapi.base.application.fibonacci.values.FibonacciInput;
 import com.srkapi.base.application.fibonacci.values.FibonacciOutput;
 import com.srkapi.base.application.fibonacci.usecase.CalculateFibonacciUseCases;
 import com.srkapi.base.domain.fibonacci.domain.exceptions.NumberErrorException;
-import com.srkapi.base.shared.DomainException;
+import com.srkapi.base.shared.domain.DomainException;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
