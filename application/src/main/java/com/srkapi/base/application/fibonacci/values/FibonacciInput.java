@@ -5,10 +5,9 @@ import lombok.NonNull;
 
 @Getter
 public class FibonacciInput {
-    @NonNull
-    private Integer num;
+  @NonNull private Integer num;
 
-    public FibonacciInput(Integer num) {
-        this.num = num;
-    }
+  public FibonacciInput(Integer num) {
+    this.num = num;
+  }
 }

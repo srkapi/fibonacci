@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configuration-service
+  namespace: default
+data:
+  application.yaml: |-
+    test:
+      hello:  prueba dev!
+
+    spring:
+      application:
+        name: configuration-service
+    #  data:
+    #   mongodb:
+    #    uri: mongodb://mongodb:27017/admin?maxPoolSize=200
+
+    #opentracing:
+    # jaeger:
+    #  service-name: spring-example
+    # enabled: TRUE
+    #udp-sender:
+    # host: simplest-agent
+    #http-sender:
+    #url: http://localhost:14268/api/traces
+    # url: http://simplest-collector:14268/api/traces
+
+

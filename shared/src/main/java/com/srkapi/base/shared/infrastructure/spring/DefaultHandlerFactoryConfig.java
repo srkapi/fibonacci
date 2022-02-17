@@ -8,7 +8,7 @@ public class DefaultHandlerFactoryConfig implements HandlerFactoryConfig {
   private SpringAutoScanHandlerFactory springAutoScanHandlerFactory;
 
   public DefaultHandlerFactoryConfig(ApplicationContext context, String basePackage) {
-    this.springAutoScanHandlerFactory = new SpringAutoScanHandlerFactory(context,basePackage);
+    this.springAutoScanHandlerFactory = new SpringAutoScanHandlerFactory(context, basePackage);
   }
 
   @Override

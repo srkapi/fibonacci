@@ -11,14 +11,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class CommandConfig {
 
+  @Bean
+  public CreateUserCommandHandler exposeCreateUserCommand(@Autowired EventBus eventBus) {
+    return new CreateUserCommandHandler(eventBus);
+  }
 
-    @Bean
-    public CreateUserCommandHandler exposeCreateUserCommand(@Autowired EventBus eventBus){
-        return new CreateUserCommandHandler(eventBus);
-    }
-
-    @Bean
-    public CalculateFibonacciUseCases exposeFibonacciExecutor() {
-        return new FibonacciCalculator();
-    }
+  @Bean
+  public CalculateFibonacciUseCases exposeFibonacciExecutor() {
+    return new FibonacciCalculator();
+  }
 }

@@ -1,13 +1,12 @@
 package com.srkapi.base.shared.domain.message;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 final class ReflectionUtils {
   private static final Log log = LogFactory.getLog(ReflectionUtils.class);
@@ -25,8 +24,7 @@ final class ReflectionUtils {
     List<Method> resultMethods = new ArrayList<>();
     for (Class reflectingClass : reflectingClasses) {
       resultMethods.addAll(
-          getDeclaredMethodsAnnotatedWithForSingleClass(reflectingClass, annotationClass)
-      );
+          getDeclaredMethodsAnnotatedWithForSingleClass(reflectingClass, annotationClass));
     }
 
     return resultMethods;
@@ -43,8 +41,7 @@ final class ReflectionUtils {
     List<Field> resultFields = new ArrayList<>();
     for (Class reflectingClass : reflectingClasses) {
       resultFields.addAll(
-          getDeclaredFieldsAnnotatedWithForSingleClass(reflectingClass, annotationClass)
-      );
+          getDeclaredFieldsAnnotatedWithForSingleClass(reflectingClass, annotationClass));
     }
 
     return resultFields;
@@ -64,13 +61,15 @@ final class ReflectionUtils {
       } catch (NoSuchFieldException ex) {
         // Intentionally bypass
       } catch (IllegalAccessException ex) {
-        log.error(String.format("Error while getting value of the field %s on %s",
-            fieldName, obj.getClass().getName()));
+        log.error(
+            String.format(
+                "Error while getting value of the field %s on %s",
+                fieldName, obj.getClass().getName()));
       }
     }
 
-    throw new NoSuchFieldException(String.format("%s doesn't contain field %s",
-        obj.getClass().getName(), fieldName));
+    throw new NoSuchFieldException(
+        String.format("%s doesn't contain field %s", obj.getClass().getName(), fieldName));
   }
 
   private static List<Class> getAllSuperClasses(Class cls) {

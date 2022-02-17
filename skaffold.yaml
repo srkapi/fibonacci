@@ -1,0 +1,28 @@
+apiVersion: skaffold/v2beta1
+kind: Config
+metadata:
+  name: users-service
+build:
+  tagPolicy:
+    gitCommit: {}
+  local:
+    push: false
+  artifacts:
+    - image: com.srkapi.base/users
+      context: .
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        auto: {}
+deploy:
+  kubeContext: minikube
+  helm:
+    releases:
+      - name: users-release
+        chartPath: helm
+        namespace: default
+        valuesFiles:
+          - helm/values.local.yaml
+        setValueTemplates:
+          "image.repository": '{{.IMAGE_NAME}}'
+          "image.tag": '{{.DIGEST_HEX}}'

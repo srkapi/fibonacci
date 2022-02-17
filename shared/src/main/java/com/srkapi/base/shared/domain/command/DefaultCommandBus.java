@@ -1,26 +1,27 @@
 package com.srkapi.base.shared.domain.command;
 
-
-
 import com.srkapi.base.shared.domain.DomainException;
-import com.srkapi.base.shared.domain.exceptions.NoHandlerFoundException;
-import com.srkapi.base.shared.domain.message.*;
 import com.srkapi.base.shared.domain.command.middleware.Middleware;
-
+import com.srkapi.base.shared.domain.exceptions.NoHandlerFoundException;
+import com.srkapi.base.shared.domain.message.DefaultMessageBus;
+import com.srkapi.base.shared.domain.message.Message;
+import com.srkapi.base.shared.domain.message.MessageBus;
+import com.srkapi.base.shared.domain.message.MessageHandler;
+import com.srkapi.base.shared.domain.message.MessageHandlerFactory;
 import java.util.List;
 
 public final class DefaultCommandBus implements CommandBus {
   private final MessageBus defaultMessageBus;
 
-  public DefaultCommandBus(CommandHandlerFactory commandHandlerFactory,
-      List<Middleware> middlewareList) {
-    this.defaultMessageBus = new DefaultMessageBus(
-        new MessageHandlerFactoryAdapter(commandHandlerFactory), middlewareList
-    );
+  public DefaultCommandBus(
+      CommandHandlerFactory commandHandlerFactory, List<Middleware> middlewareList) {
+    this.defaultMessageBus =
+        new DefaultMessageBus(
+            new MessageHandlerFactoryAdapter(commandHandlerFactory), middlewareList);
   }
 
   @Override
-  public <R> R dispatch(Command<R> command) throws DomainException,Exception {
+  public <R> R dispatch(Command<R> command) throws DomainException, Exception {
     return defaultMessageBus.dispatch(command);
   }
 
@@ -55,7 +56,7 @@ public final class DefaultCommandBus implements CommandBus {
     @Override
     @SuppressWarnings("unchecked")
     public R handle(M message) throws Exception {
-      return commandHandler.handle((Command<R>)message);
+      return commandHandler.handle((Command<R>) message);
     }
   }
 }

@@ -5,8 +5,8 @@ import com.srkapi.base.shared.domain.Errors;
 
 public class NumberErrorException extends DomainException {
 
-    public NumberErrorException(String msg) {
-        this.code = Errors.CONFLICT;
-        this.detail = msg;
-    }
+  public NumberErrorException(String msg) {
+    this.code = Errors.CONFLICT;
+    this.detail = msg;
+  }
 }

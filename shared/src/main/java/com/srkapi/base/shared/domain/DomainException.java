@@ -4,6 +4,6 @@ import lombok.Getter;
 
 @Getter
 public abstract class DomainException extends Exception {
-    protected Errors code;
-    protected String detail;
+  protected Errors code;
+  protected String detail;
 }

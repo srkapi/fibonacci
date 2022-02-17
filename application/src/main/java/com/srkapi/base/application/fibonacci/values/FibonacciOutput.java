@@ -4,9 +4,9 @@ import lombok.Getter;
 
 @Getter
 public class FibonacciOutput {
-    private Integer result;
+  private Integer result;
 
-    public FibonacciOutput(int result) {
-        this.result=result;
-    }
+  public FibonacciOutput(int result) {
+    this.result = result;
+  }
 }

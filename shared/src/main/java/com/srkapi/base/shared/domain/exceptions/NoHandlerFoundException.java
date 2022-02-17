@@ -1,6 +1,5 @@
 package com.srkapi.base.shared.domain.exceptions;
 
-
 import com.srkapi.base.shared.domain.message.Message;
 
 public class NoHandlerFoundException extends CommandBusException {

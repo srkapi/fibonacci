@@ -7,10 +7,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class UserRequest {
-    @Schema(required = true)
-    private String name;
-    @Schema(required = true)
-    private String password;
-    @Schema(required = true)
-    private String email;
+  @Schema(required = true)
+  private String name;
+
+  @Schema(required = true)
+  private String password;
+
+  @Schema(required = true)
+  private String email;
 }
