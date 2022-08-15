@@ -99,6 +99,8 @@ public final class RabbitMqDomainEventsConsumer {
 
     headers.put("redelivery_count", (int) headers.getOrDefault("redelivery_count", 0) + 1);
 
+
+
     MessageBuilder.fromMessage(message)
         .andProperties(
             MessagePropertiesBuilder.newInstance()
